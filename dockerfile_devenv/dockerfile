@@ -1,0 +1,19 @@
+FROM my-image-java
+
+RUN yum -y install wget unzip # Installation de wget et unzip
+
+COPY gradle-2.12-all.zip /tmp/
+
+RUN mkdir /opt/gradle
+RUN unzip /tmp/gradle-2.12-all.zip -d /opt/gradle
+RUN ln -sfn /opt/gradle/gradle-2.12 /opt/gradle/latest
+
+# -s : make symbolic links instead of hard links
+# -f : remove existing destination files
+# -n : treat LINK_NAME as a normal file if it is a symbolic link to a directory
+
+ENV GRADLE_HOME /opt/gradle/latest
+
+WORKDIR /var/hello-world
+
+ENTRYPOINT ["/opt/gradle/latest/bin/gradle", "clean", "bootRun", "-PappVersion=master"]

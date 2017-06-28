@@ -1,0 +1,8 @@
+From centos:7
+
+COPY jdk-8u131-linux-x64.rpm /tmp/
+
+RUN yum -y install /tmp/jdk-8u131-linux-x64.rpm
+ENV JAVA_HOME /usr/java/latest
+
+
