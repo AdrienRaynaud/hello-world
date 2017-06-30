@@ -1,6 +1,6 @@
 FROM my-image-java
 
-RUN yum -y install wget unzip # Installation de wget et unzip
+RUN yum -y install unzip # Installation de wget et unzip
 
 COPY gradle-2.12-all.zip /tmp/
 
