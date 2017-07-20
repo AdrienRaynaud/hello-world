@@ -1,2 +1,0 @@
-FROM busybox:glibc
-VOLUME /var/hello-world
