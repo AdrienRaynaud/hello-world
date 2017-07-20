@@ -1,6 +1,6 @@
-FROM my-image-java
+FROM araynaud/java
 
-RUN yum -y install unzip # Installation de wget et unzip
+RUN yum -y install unzip # Installation unzip
 
 COPY gradle-2.12-all.zip /tmp/
 
