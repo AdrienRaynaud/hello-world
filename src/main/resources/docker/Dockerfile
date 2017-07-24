@@ -1,4 +1,4 @@
-FROM my-image-java
+FROM araynaud/java 
 
 RUN mkdir /opt/helloworld
 COPY helloworld.jar /opt/helloworld/
