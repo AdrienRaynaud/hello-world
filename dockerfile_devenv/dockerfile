@@ -1,4 +1,4 @@
-FROM araynaud/java
+FROM java
 
 RUN yum -y install unzip # Installation unzip
 
